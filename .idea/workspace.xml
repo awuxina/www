@@ -5,164 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c3d2804-768f-4751-b904-c7409719f203" name="默认的" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/project.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Git/remark.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTTP_CSS_JS/CSS/remark.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTTP_CSS_JS/CSS/文本属性.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTTP_CSS_JS/HTTP/HTML常用标签" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTTP_CSS_JS/HTTP/HTTP协议.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTTP_CSS_JS/JQuery/JQuert基础.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTTP_CSS_JS/JQuery/JQuery基础.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTTP_CSS_JS/JQuery/jquery-3.3.1.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTTP_CSS_JS/JS/JS基础.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTTP_CSS_JS/JS/JS基础.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTTP_CSS_JS/JS/remary.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HTTP_CSS_JS/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ORM框架/orm_class.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ORM框架/remark.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SQL/MySQL模块/MySQL分页" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SQL/MySQL模块/MySQL执行计划.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SQL/MySQL模块/MySQL索引.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SQL/MySQL模块/SQL事务" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SQL/MySQL模块/SQL存储过程" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SQL/MySQL模块/SQL模块.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SQL/MySQL模块/remark" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SQL/MySQL模块/事务.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SQL/MySQL模块/存储过程调用.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SQL/MySQL模块/慢日志.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SQL/MySQL模块/练习SQL题" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SQL/MySQL模块/练习用的数据库.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/WEB框架/Django框架/ddd.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/WEB框架/Django框架/安装" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/WEB框架/remary" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/作业.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/b.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/egon/a/a.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/egon/a/a1/a2/a2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/egon/b/b.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/egon/egon.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/test.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/内置函数.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/函数应用.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/列表生成式.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/协成_装饰器_生成器的运用.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/协程函数.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/无参装饰器.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/有参装饰器.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/生成器.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/生成器表达式.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/函数/迭代器.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/测试.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/IO模型/remark.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/IO模型/selectors模块.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/IO模型/select机制.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/IO模型/客户端.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/IO模型/服务端.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/IO模型/生产消费者模型.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/IO模型/队列.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/UDP协议套接字/udp客户端.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/UDP协议套接字/udp客户端1.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/UDP协议套接字/udp服务端.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/UDP协议套接字/并发服务端.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/json远程执行命令/client.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/json远程执行命令/server.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/多并发的远程执行命令/client.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/多并发的远程执行命令/client1.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/多并发的远程执行命令/client2.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/多并发的远程执行命令/server.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/客户端.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/服务端.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/粘包问题/cloent.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/粘包问题/server.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/练习/通客户端.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/练习/通讯服务端.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/进程与线程/JOIN&amp;daemon.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/进程与线程/Process对象.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/进程与线程/event对象.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/进程与线程/greenlet模块.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/进程与线程/test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/进程与线程/协成.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/进程与线程/同步锁.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/进程与线程/死锁和递归锁.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/进程与线程/线程方式1.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/进程与线程/线程方式2.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/远程执行命令/client.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/网络编程和并发/远程执行命令/server.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/自己的WEB框架/动态网站/host.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/自己的WEB框架/服务端.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/自己的WEB框架/静态网站/aricle.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/自己的WEB框架/静态网站/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/语言基础/haproxy.conf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/语言基础/text2.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/语言基础/三级菜单.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/语言基础/字符串操作.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/语言基础/数据类型函数.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/语言基础/文件操作.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/语言基础/正则表达式.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/语言基础/测试.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/语言基础/用于写入的文件.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/语言基础/用于读取的文件.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/语言基础/编码.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/语言基础/运算符.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/语言基础/集合.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/软件开发规范/ATM/README.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/软件开发规范/ATM/bin/start.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/软件开发规范/ATM/conf/settings.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/软件开发规范/ATM/core/test_main.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/软件开发规范/ATM/lib/common.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/a.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/attr系列.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/call方法.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/classmethod.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/item系列.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/new.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/staticmethod的用法.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/上下文管理协议.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/反射.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/反射的用途.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/多态.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/定制自己的数据类型.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/实现迭代器协议.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/封装.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/抽象类.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/接口.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/析构函数.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/AES加密.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/OS模块.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/data" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/data_pickle" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/glance/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/glance/policy.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/glance/versions.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/struct模块.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/subprocess.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/sys模块.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/test.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/包导入.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/序列化模块.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/异常处理.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/日志模块.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/时间模块.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/模块导入.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/正则表达式.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/算法模块.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/线程池模块.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/进程池模块.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模块/随机模块.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/模拟类的创建过程.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/特性property.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/组合.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/继承.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/自制元类.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/面向对象/面向对象进阶.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -225,21 +69,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="remark.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="remark.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Git/remark.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="34" column="23" lean-forward="false" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+            <state relative-caret-position="837">
+              <caret line="31" column="4" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+              <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -336,8 +180,8 @@
         <option value="$PROJECT_DIR$/面向对象/模块/test.py" />
         <option value="$PROJECT_DIR$/面向对象/模块/subprocess.py" />
         <option value="$PROJECT_DIR$/面向对象/模块/AES加密.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/Git/remark.txt" />
+        <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
   </component>
@@ -493,153 +337,6 @@
       <module name="project" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/面向对象/模块/AES加密.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="作业" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/作业.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="内置函数" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/函数" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/函数/内置函数.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="算法模块" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/面向对象/模块" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/面向对象/模块/算法模块.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="编码" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/语言基础" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/语言基础/编码.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="队列" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/网络编程和并发/IO模型" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/网络编程和并发/IO模型/队列.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="测试" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/测试.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="函数基础" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/函数" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/函数/函数基础.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="事务" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SQL/MySQL模块" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SQL/MySQL模块/事务.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -828,6 +525,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="作业" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/作业.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="运算符" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -1007,6 +722,24 @@
       <module name="project" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/网络编程和并发/服务端.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="内置函数" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/函数" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/函数/内置函数.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -1193,6 +926,25 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="算法模块" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/面向对象/模块" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/面向对象/模块/算法模块.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="正则表达式" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -1373,6 +1125,24 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="编码" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/语言基础" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/语言基础/编码.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <configuration name="文件操作" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -1556,6 +1326,25 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="队列" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/网络编程和并发/IO模型" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/网络编程和并发/IO模型/队列.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="客户端" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -1570,6 +1359,61 @@
       <module name="project" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/网络编程和并发/客户端.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="测试" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/测试.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="函数基础" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/函数" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/函数/函数基础.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="事务" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SQL/MySQL模块" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SQL/MySQL模块/事务.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -2045,18 +1889,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/Git/remark.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+        <state relative-caret-position="837">
+          <caret line="31" column="4" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Git/remark.txt">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="34" column="23" lean-forward="false" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding />
         </state>
       </provider>
