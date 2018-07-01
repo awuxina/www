@@ -1,0 +1,49 @@
+"""存储过程创建和使用"""
+delimiter //
+#传参数 (in,out,inout)
+#out 一般用于标识结果
+create procedure p1()
+bengin
+    ....
+end //
+delimiter ;
+
+call p1()
+
+"""存储过程创建和使用"""
+方式一:
+    MySQL:存储过程
+    程序:调用存储过程
+方式二:
+    MySQL:...
+    程序:SQL语句
+方式三:
+    MySQL:...
+    程序员:类和对象
+
+
+delimiter //
+CREATE PROCEDURE p2(
+in n1 int,
+)
+BEGIN
+    select * from userinfo;
+END //
+delimiter ;
+CALL p2()
+
+
+delimiter //
+CREATE PROCEDURE p3(
+in n1 int,
+OUT n2 int
+)
+BEGIN
+	set n2=123;
+    select * from userinfo where id>n1;
+END //
+delimiter ;
+
+set @v1=0;
+CALL p3(1000,@v1);
+@v1;

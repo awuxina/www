@@ -1,0 +1,17 @@
+a. select * from userinfo limit 20,10;
+b.  - 不让看
+    - 索引表中扫:
+        select * from userinfo where id in (select id from userinfo limit 20,10)
+    -  方案:
+            记录当前页最大或最小的ID,最小ID向上取10 最大ID向下取10
+            1.页面只有上一页,下一页
+            下一页
+                select * from userinfo where id > max_id limit 10;
+            上一页
+                select * from userinfo where id > min_id limit 10;
+            2.上一页 192  193  [196]  197  198  199 下一页
+            选择199
+                select * from userinfo where id in (
+                select id from(
+                select id from userinfo where id >max_id limit 30
+                ) as N order by N.id desc limit 10)

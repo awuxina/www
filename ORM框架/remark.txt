@@ -1,0 +1,12 @@
+ORM框架: SQLAlchemy
+    - 作用:
+        1.提供简单的规则
+        2.自动抓换成SQL
+
+    - DB first: 手动创建数据库以及表 -> ORM框架 -> 自动生成类
+
+    - code first: 手动创建类、数据库 -> ORM框架 -> 以及表
+        a.功能:
+            - 创建数据库表
+                - 连接数据库(非SQLAlchemy,pymyql)
+                - 类转换成SQL语句

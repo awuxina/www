@@ -1,0 +1,129 @@
+delimiter //
+create property p4(
+    out status int
+)
+begin
+    1.声明如果出现异常则执行{
+        set status=1;
+        rollbackl
+    }
+
+    开始事物
+        -- 张三减100
+        -- 李四加90
+        -- 王五加10
+        commit;
+    结束
+    set status=2
+end
+
+
+
+# 使用事务
+delimiter //
+CREATE PROCEDURE commit1(
+	OUT p_return_code TINYINT
+)
+BEGIN
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+	BEGIN
+		-- failure
+		set p_return_code = 1;
+    ROLLBACK;
+	END;
+
+	START TRANSACTION;
+		SELECT * FROM USERINFO;
+	COMMIT;
+
+	-- succ
+	set p_return_code = 0;
+END //
+delimiter ;
+
+#调用
+set @num=-1;
+call commit1(@num);
+select @num;
+
+
+
+
+# 事务循环
+delimiter //
+CREATE PROCEDURE commit2(
+	OUT p_return_code TINYINT
+)
+BEGIN
+
+	DECLARE row_id int;
+	DECLARE row_uname varchar(32);
+	-- 是否继续循环的状态标记
+	DECLARE done INT DEFAULT FALSE;
+	-- 定义一个游标,及循环的范围
+	DECLARE my_cursor CURSOR FOR SELECT id,uname FROM userinfo;
+	DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+	BEGIN
+		-- failure
+		set p_return_code = 1;
+    ROLLBACK;
+	END;
+
+	START TRANSACTION;
+
+		OPEN my_cursor;
+			xxoo: LOOP
+				FETCH my_cursor INTO row_id,row_uname;
+				IF done THEN
+					LEAVE xxoo;
+				END IF;
+				UPDATE userinfo SET age=row_id WHERE id<0;
+			END LOOP xxoo;
+		close my_cursor;
+	COMMIT;
+
+	-- succ
+	set p_return_code = 0;
+END //
+delimiter ;
+
+#调用
+set @num=-1;
+call commit2(@num);
+select @num;
+
+
+
+#防SQL注入
+delimiter //
+CREATE PROCEDURE commit3(
+	IN nid INT,
+	OUT p_return_code INT
+)
+BEGIN
+
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+	BEGIN
+		-- failure
+		set p_return_code = 1;
+    ROLLBACK;
+	END;
+
+	START TRANSACTION;
+	-- 定义一个SESSION级别的变量
+	set @nid = nid;
+	-- 检测SQL合法性
+	PREPARE xxx FROM 'SELECT * FROM userinfo WHERE id > ?';
+	-- 格式化
+	EXECUTE xxx USING @nid;
+	-- 执行SQL语句
+	DEALLOCATE PREPARE xxx;
+
+	COMMIT;
+
+	-- succ
+	set p_return_code = 0;
+END //
+delimiter ;

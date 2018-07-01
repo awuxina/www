@@ -1,0 +1,35 @@
+环境:
+    1.运行cmd
+    2.进入目录
+
+分区：
+    工作区            版本库         远程仓库
+ 原内容|修改内容     暂存区|分支        分支
+
+git config --local user.name '名称'
+git config --local user.email '邮箱'
+git init 创建文件
+git status 查看状态
+git add test.py  文件放入暂存区
+git commit -m 'first' 文件提交版本区 'first' 是文件描述
+git log 日志
+
+回滚
+git reset --soft    '版本号'   版本库分支     回滚  暂存区
+git reset head      文件       暂存区         回滚  修改内容
+git check out       文件       修改内容       回滚  原内容
+git reset --mix     '版本号'   版本库分支     回滚  修改内容
+git reset --hard    '版本号'   版本库分支     回滚  原内容
+
+git reflog  整个周期版本
+git reset '版本号' 回滚到版本 默认--mix 再 git check out 就回滚了
+git reset --hard '版本号' 回滚到版本
+
+git ls-tree head 查看提交的版本和所有文件
+git ls-files -s 查看暂存区和版本中所有文件
+回滚  end
+
+临时存储
+git stash list 查看临时目录
+git stash   将所有修改临时存储
+git stash pop 将临时记录放入内容

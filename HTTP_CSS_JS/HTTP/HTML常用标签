@@ -1,0 +1,63 @@
+<!DOCTYPE> 此标签可告知浏览器文档使用哪种 HTML 或 XHTML 规范。
+meta标签的组成：meta标签共有两个属性，它们分别是http-equiv属性和name 属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。
+
+(1)name属性: 主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。
+<meta name="keywords" content="meta总结,html meta,meta属性,meta跳转">
+<meta name="description" content="老男孩培训机构是由一个很老的男孩创建的">
+
+(2)http-equiv属性：相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值。
+<meta http-equiv="Refresh" content="2;URL=https://www.oldboy.com"> //(注意后面的引号，分别在秒数的前面和网址的后面)
+<meta http-equiv="content-Type" charset=UTF8">
+<meta http-equiv = "X-UA-Compatible" content = "IE=EmulateIE7" />
+
+
+<hn>: n的取值范围是1~6; 从大到小. 用来表示标题.
+<p>: 段落标签. 包裹的内容被换行.并且也上下内容之间有一行空白.
+<b> <strong>: 加粗标签.
+<strike>: 为文字加上一条中线.
+<em>: 文字变成斜体.
+<sup>和<sub>: 上角标 和 下角表.
+<br>:换行.
+<hr>:水平线
+特殊字符：
+      &lt; &gt；&quot；&copy;&reg;
+
+<div></div> ： <div>只是一个块级元素，并无实际的意义。主要通过CSS样式为其赋予不同的表现.
+<span></span>： <span>表示了内联行(行内元素),并无实际的意义,主要通过CSS样式为其赋予不同的表现.
+
+<input>
+<1> 表单类型
+type:        text 文本输入框
+             password 密码输入框
+             radio 单选框
+             checkbox 多选框
+             submit 提交按钮
+             button 按钮(需要配合js使用.) button和submit的区别？
+             file 提交文件：form表单需要加上属性enctype="multipart/form-data"
+            上传文件注意两点：
+                     1 请求方式必须是post
+                     2 enctype="multipart/form-data"
+ <2> 表单属性
+ name:    表单提交项的键.
+           注意和id属性的区别：name属性是和服务器通信时使用的名称；
+           而id属性是浏览器端使用的名称，该属性主要是为了方便客户端编程，而在css和javascript中使用的
+value:    表单提交项的值.对于不同的输入类型，value 属性的用法也不同：
+                type="button", "reset", "submit" - 定义按钮上的显示的文本
+                type="text", "password", "hidden" - 定义输入字段的初始值
+                type="checkbox", "radio", "image" - 定义与输入相关联的值
+checked:  radio 和 checkbox 默认被选中
+readonly: 只读. text 和 password
+disabled: 对所用input都好使.
+
+ <select> 下拉选标签属性
+          name:表单提交项的键.
+          size：选项个数
+          multiple：multiple
+                 <optgroup>为每一项加上分组
+                 <option> 下拉选中的每一项 属性：
+                       value:表单提交项的值.
+                       selected: selected下拉选默认被选中
+
+<textarea cols=“宽度” rows=“高度” name=“名称”>
+                   默认内容
+</textarea>

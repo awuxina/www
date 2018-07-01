@@ -1,0 +1,484 @@
+安装
+#在D:\python\run3.6.4\Scripts环境下
+pip3 install django
+
+使用
+
+django-admin startproject mysite    #创建1个django项目 在当前位置
+cd mysite
+python manage.py runserver 127.0.0.1:8080 #运行
+
+Django程序目录
+    mysite
+        - settings.py # Django配置文件
+        - url.py      # 路由系统: url->函数
+        - wsgi.py     #  用于定义Django用socket, wsgiref.uwsgi
+
+        # 对当前Django程序所有操作可以基于python manage.py runserver
+        manage.py
+
+命令(cmd):
+在mysite(项目目录)
+python manage.py startapp app01 #创建1个APP目录 app01
+
+
+# 添加一个admin 用户
+python manage.py createsuperuser
+
+前端显示安全的HTML
+    vuews.py
+    from django.utils.safestring import marke_safe
+    html="<a href='http://www.baidu.com'>百度</a>"
+    newhtml=mark_safe(html)
+    return render(request,'test.html',{'html':html})
+目录结构
+project
+    - app01
+        - admin Django自带后台管理相关配置
+        - modal 写类,根据类创建数据库表
+        - test  单元测试
+        - views 业务处理
+
+配置
+settings.py
+    STATICFILES_DIRS=(
+    os.path.join(BASE_DIR,'static'),
+)
+csrf安全验证
+    from django.views.decorators.csrf import csrf_exempt,csrf_protect
+    #函数禁用验证
+    @csrf_exempt
+    def 函数()
+
+    #局部使用 验证
+    @csrf_protect
+    def 函数()
+
+    html
+    {% csrf_token %}
+    {{ csrf_token }}
+
+    ajax验证
+    <script src="/static/jquery.cookie.js"></script>
+    <script>
+    var token = $.cookie('csrftoken');
+    $('#ajax1').bind('click', function () {
+        $.ajax({
+            url: '/app01/login.html',
+            type: 'POST',
+            headers: {'X-CSRFToken': token},
+            {#data: {'user':user,'csrfmiddlewaretoken':csrf},#}
+            data: {},
+            syccess: function (arg) {
+                alert(arg);
+            }
+        })
+    });
+    </script>
+
+CBV加装饰器
+from django.views import View
+from django.utils.decorators import method_decorator
+
+def validation(func):
+def innew (*args,**kwargs):
+    return func(*args,**kwargs)
+return innew
+
+#一个一个加
+@method_decorator(validation,name='post')
+@method_decorator(validation,name='put')
+@method_decorator(validation,name='delete')
+#或者 全加
+@method_decorator(validation,name='dispatch')
+
+class Foo(View):
+    @method_decorator(csrf_protect)
+    def get(self,request):
+        pass
+
+1.路由系统
+    url -> 函数
+    a. /login/ -> def login
+    b. /add-user/(\d+)/ -> def adduser(request)
+  添加app(模块)的路由(路由分发)
+      from django.urls import path,include
+      urlpatterns = [
+        path('app01/', include('app01.urls')),
+      ]
+
+  路由定向:
+      urls.py 中:
+      urlpatterns = [
+            path('url_name/<int:a>.html', views.url_name,name='url_name'),
+            ]
+      views.py 中:
+            from django.urls import reverse
+            url=reverse('url_name',kwargs={'a':a})
+            print(url)
+      html调用: {% url 'url_name' 1 %}
+创建数据库表
+    1.手动创建数据库
+    2.改settings.py
+        DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'Django_test',
+            'USER': 'root',
+            'PASSWORD':'123456',
+            'HOST':'localhost',
+            '0PORT':'3306'
+        }
+    3.注册APP(模块),改settings.py,添加自己的APP
+       INSTALLED_APPS = [
+           'django.contrib.admin',
+           'django.contrib.auth',
+           'django.contrib.contenttypes',
+           'django.contrib.sessions',
+           'django.contrib.messages',
+           'django.contrib.staticfiles',
+           'app01',
+       ]
+    4.models.py 添加表的类(继承models.Model)
+        class UserGroup(models.Model):
+            title = models.CharField(max_length=32)
+        class UserInfo(models.Model):
+            # null = True 为空
+            # default= 'xx' 默认值
+            # db_index=True 索引
+            # unique=True 唯一索引
+            # primary_key=True 主键
+            # max_length 长度
+            nid=models.BigAutoField(primary_key=True)
+            username = models.CharField(max_length=32)
+            password = models.CharField(max_length=64)
+            age = models.IntegerField(null=True)
+            sex = models.IntegerField(default=2)
+
+            money = models.DecimalField(max_digits=2, decimal_places=2,null=True)
+
+            ctime = models.DateTimeField(null=True)
+            ltime=models.DateField(null=True)
+
+            color_list =((1,'褐色'),(2,'白色'))
+            color=models.IntegerField(choices=color_list)
+            #外键,自动添加为user_group_id 字段
+            user_group = models.ForeignKey(UserGroup,on_delete=models.CASCADE)
+
+        创建多对多表(此方法只能有三列,否则只能自己写)
+           class Boy(models.Model):
+               name = models.CharField(max_length=32)
+               m = models.ManyToManyField('Girl') #表的关系多对多
+           class Girl(models.Model):
+               name = models.CharField(max_length=32)
+        自己写
+            class Love(models.Model):
+            b = models.ForeignKey('Boy',on_delete=models.CASCADE)
+            g = models.ForeignKey('Girl',on_delete=models.CASCADE)
+
+            class Meta:
+                #联合唯一索引
+                unique_together =[
+                    ('b','g'),
+                ]
+
+                #联合索引
+                index_together=(
+                    ('b','g'),
+                )
+    5.执行命令(cmd) 在当前项目文件运行
+        python manage.py makemigrations [app名称]
+        python manage.py migrate 创建数据库表
+        python manage.py migrate --database=[数据库名]
+
+
+
+修改表:
+    如:添加字段
+    1.修改models.py
+        class UserGroup(models.Model):
+            title = models.CharField(max_length=32)
+        class UserInfo(models.Model):
+            nid=models.BigAutoField(primary_key=True)
+            username = models.CharField(max_length=32)
+            password = models.CharField(max_length=64)
+            #下面为添加字段
+            age = models.IntegerField(null=True)
+            sex = models.IntegerField(default=2)
+
+            user_group = models.ForeignKey(UserGroup,on_delete=models.CASCADE)
+
+    2.执行命令:
+        python manage.py makemigrations [app名称]
+        python manage.py migrate 创建数据库表
+
+添加数据
+    1.添加用户分组
+        from app01 import models
+        models.UserGroup.objects.create(title='销售部')
+        批量增加
+        obj=[
+        models.UserInfo(username='ddd',password='dsfsd',age=1,user_group=1,sex=0),
+        models.UserInfo(username='ddd',password='dsfsd',age=1,user_group=1,sex=0)
+        ]
+        第二参数每次多少个对象,最大999
+        v = models.UserInfo.objects.bulk_create(obj,10)
+        如果存在就不创建,不存在就创建
+        obj,created = models.UserInfo.objects.bulk_create(obj,10)
+
+        添加多对多表
+           obj = models.Boy.objects.all().first()
+            obj.m.add(3)
+            print(obj.id,obj.name)
+
+    2.更新
+        models.UserInfo.objects.get_or_create(nid=id).update(username='ddd',password='dsfsd',age=1,user_group=1,sex=0)
+
+        重置多对多表(所有关系只有一条)
+           obj = models.Boy.objects.all().first()
+            obj.m.set(3)
+
+    3.删除
+        models.UserInfo.objects.filter(nid=id).delete()
+        删除多对多表
+            obj = models.Boy.objects.all().first()
+            obj.m.remove(3)
+    4.查所有
+        #first() 第1个 #last()最后一个 #in_bulk() 相当in( )
+        list=models.UserGroup.objects.all()
+        查询多对多表
+            obj = models.Boy.objects.all().first()
+            obj.m.all()
+
+        根据女孩求男孩
+            gril=models.Girl.objects.filter('茵').first()
+            print(gril.id,gril.name)
+            v= gril.boy_set.all()
+
+    5.条件查询
+        # __gt大于 #__lt小于 #__in in(,,)
+        list=models.UserGroup.objects.filter(id__gt=10)
+        #取特定的列
+        list=models.UserGroup.objects.all().values('id','title')
+        #将结果变成元祖
+        list=models.UserGroup.objects.all().values_list('id','title')
+
+    6.反向操作:根据部门找到用户
+        list = models.UserGroup.objects.all()
+        for i in list:
+            for j in i.userinfo_set.all():
+                print(j.username)
+    7.正向操作:在用户中直接找到部门
+        list_userinfo = models.UserInfo.objects.all().values('id','name','user_group__title')
+    8.去重
+        list_userinfo = models.UserInfo.objects.all().values('id','name','user_group__title').distinct()
+    9.排序 #倒叙 order_by('-id') #多序 order_by('id','name')
+        list_userinfo = models.UserInfo.objects.all().values('id','name','user_group__title').order_by('id')[0:10]
+    10. 分组
+        from django.db.models import Count,Sum,Max,Min
+        test_list_userinfo = models.UserInfo.objects.values('user_group_id').annotate(xx=Count('nid'))
+        # 分组后二次筛选 聚合
+        # .filter(id__gt=1) id>0 # .filter(id__lt=1) id<0
+        # .filter(id__gte=1) id>=0  # .filter(id__lte=1) id<=0
+        # .exclude(id=1) id!=1
+        # .filter(id__in=[1,2,3]) id in [1,2,3] # .filter(id__ranage=[1,4]) id>=1 and <4
+
+        test_list_userinfo2 = models.UserInfo.objects.values('user_group_id').annotate(xx=Count('nid')).filter(xx__gt=20935)
+        #执行的SQL语句
+        print(test_list_userinfo2.query)
+
+    11. extra用法
+        from app01 import models
+        # 对等 select id,username (select count(1) from type) from app01_userinfo where id>1 limit 10
+        v = models.UserInfo.objects.all().extra(select={'n':'select count(1) from app01_UserGroup where id>%s'},select_params=[1])[0:10]
+
+        models.UserInfo.objects.all().extra(
+        where=['nid=%s', 'username=%s','app01_UserInfo.nid=appp01_UserGroup'],
+        params=[1,'alex'],
+        order_by=['nid'],
+        tables=['app01_userinfo']
+        )
+    12. 执行原生SQL:
+        from django.db import connection, connections
+        cursor = connection.cursor()  # cursor = connections['default'].cursor()
+        #cursor = connections['db2'].cursor()  # cursor = connections['default'].cursor()
+        cursor.execute("""SELECT * from app01_userinfo limit 10""")
+        row = cursor.fetchone()
+        print(row)
+    13. 仅去特定的数据
+        list_userinfo = models.UserInfo.objects.all().only('id','name','user_group__title')
+    14. 排除特定数据
+        list_userinfo = models.UserInfo.objects.all().defer('age')
+    15. 在别的数据库拿数据
+        list_userinfo = models.UserInfo.objects.all().using('db2')
+    16. 连表查询基于性能
+        a. 主动做连第二张表查询,在第二张表数据较少时用
+            q = models.UserInfo.objects.all().values('user_group')
+            q = models.UserInfo.objects.all().select_related('user_group')
+        b.  两次查询,在第二张表数据较多时用
+            q = models.UserInfo.objects.all().prefetch_related('user_group')
+        c. 在追求速度的时候可以不用外键,数据放一张表
+    17. 按时间查询
+        from django.db.models import functions
+        1.Extract系列将只保留需要部分,别的自动填充01
+          models.Article.objects.filter(blog=user.blog).annotate(x=functions.Extract('create_time','year'))
+          models.Article.objects.filter(blog=user.blog).annotate(x=functions.ExtractYear('create_time','year'))
+        2.
+          models.Article.objects.filter(blog=user.blog).extra(
+            select={'c','date_format(create_time,"%%Y-%%m")'}).values('c')\
+            .annotate(ct=Count('id'))
+        3.Trunc
+          models.Article.objects.filter(blog=user.blog).annotate(x=functions.TruncYear('create_time','year'))
+    9.Django自带分页获取数据
+        html:上一页 下一页
+            <div>
+            {% if list_userinfo.has_previous %}
+                <a href="/app01/database?page={{ list_userinfo.previous_page_number }}">上一页</a>
+            {% endif %}
+
+            {% if list_userinfo.has_next %}
+                <a href="/app01/database?page={{ list_userinfo.next_page_number }}">下一页</a>
+            {% endif %}
+            </div>
+        views.py:
+        page = request.GET.get('page')
+        from app01 import models
+        from django.core.paginator import Paginator,Page
+        list_userinfo = models.UserInfo.objects.all()
+        # 分页获取
+        # per_page: 每页显示条数
+        # count:    数据总数
+        # num_pages:总页数
+        # page_rang:总页数的索引范围,如:(1,10)
+        # page:     page对象
+        list_userinfo=Paginator(list_userinfo,5)
+        # has_next  是否有下一页
+        # next_page_number  下一页页码
+        # has_previous  是否有上一页
+        # previous_page_number  上一页页码
+        # object_list   分页之后的数据列表
+        # number     当前页
+        # paginator     paginator对象
+        list_userinfo = list_userinfo.page(page)
+django的CBV:
+    views.py中:
+        from django.views import View
+        class Login(View):
+        """
+        常用提交方式 get:查 post:创建 put:更新 delete:删除
+        from表单就只能有get post,ajax全部能用
+        """
+        def get(self,request):
+            return render(request,'login.html',{'msg':'Login.get'})
+
+        def post(self,request):
+            return render(request, 'login.html', {'msg': 'Login.post'})
+
+        def put(self,request):
+            return render(request, 'login.html', {'msg': 'Login.put'})
+
+        def delete(self,request):
+            return render(request, 'login.html', {'msg': 'Login.delete'})
+
+        #定制自己的dispatch功能
+        def dispatch(self, request, *args, **kwargs):
+        print('前')
+        obj=super().dispatch(request, *args, **kwargs)
+        print('后')
+        return obj
+
+    urls.py中:
+    from app01 import views
+    urlpatterns = [
+        path('login.html',views.Login.as_view(),name='login'),
+    ]
+
+自定义函数
+1.在app下创建 templatetags 包
+2.在 templatetags 包 下创建任意py文件
+3.在py文件中写入
+    from django import template
+    register = template.Library()   #不可以修改
+    #参数有限制针最多2个, 可以配合if
+    @register.filter()
+    def fun1(a1,a2):
+        return a1+a2
+
+    #参数无限制,不可以配合if
+    @register.simple_tag()
+    def fun2(a1,a2,a3):
+        return a1+a2+a3
+html:
+    头部:{% load py文件 %}
+    调用:{{ '你'|fun1:'会' }}
+        {% fun2 '你' '会' '吗?' %}
+
+组件include
+1.创建组件pub.html
+    <div>
+    <h3>个人组件</h3>
+    <div class="title">标题:{{ include_name }}</div>
+    <div class="content">内容: {{ include_content }}</div>
+    </div>
+2.页面导入
+    {% include 'pub.html' %}
+
+session的使用
+    设置
+    u = request.POST.get('name')
+        p = request.POST.get('pwd')
+        if u == 'awuxina' and p == '123':
+            # 1.生成随机字符串
+            # 2.通过cookie发送给客服端
+            # 3.服务端保存随即字符串
+            request.session['name'] = u
+            request.session['pwd'] = p
+    获取
+    # 1.找客户端cookie的随即字符串
+        # 2.去session中找速记字符串
+        # 3.去session对应的key找value
+        v = request.session.get('name')
+
+    删除
+        del request.session['name']
+    其他
+        # 所有 键、值、键值对
+        request.session.keys()
+        request.session.values()
+        request.session.items()
+        request.session.iterkeys()
+        request.session.itervalues()
+        request.session.iteritems()
+
+
+        # 用户session的随机字符串
+        request.session.session_key
+
+        # 将所有Session失效日期小于当前日期的数据删除
+        request.session.clear_expired()
+
+        # 检查 用户session的随机字符串 在数据库中是否
+        request.session.exists("session_key")
+
+        # 删除当前用户的所有Session数据
+        request.session.delete("session_key")
+
+        request.session.set_expiry(value)
+            * 如果value是个整数，session会在些秒数后失效。
+            * 如果value是个datatime或timedelta，session就会在这个时间后失效。
+            * 如果value是0,用户关闭浏览器session就会失效。
+            * 如果value是None,session会依赖全局session失效策略。
+
+a. 配置 settings.py
+    SESSION_ENGINE = 'django.contrib.sessions.backends.cache'  # 引擎
+    SESSION_CACHE_ALIAS = 'default'                            # 使用的缓存别名（默认内存缓存，也可以是memcache），此处别名依赖缓存的设置
+
+
+    SESSION_COOKIE_NAME ＝ "sessionid"                        # Session的cookie保存在浏览器上时的key，即：sessionid＝随机字符串
+    SESSION_COOKIE_PATH ＝ "/"                                # Session的cookie保存的路径
+    SESSION_COOKIE_DOMAIN = None                              # Session的cookie保存的域名
+    SESSION_COOKIE_SECURE = False                             # 是否Https传输cookie
+    SESSION_COOKIE_HTTPONLY = True                            # 是否Session的cookie只支持http传输
+    SESSION_COOKIE_AGE = 1209600                              # Session的cookie失效日期（2周）
+    SESSION_EXPIRE_AT_BROWSER_CLOSE = False                   # 是否关闭浏览器使得Session过期
+    SESSION_SAVE_EVERY_REQUEST = False                        # 是否每次请求都保存Session，默认修改之后才保存

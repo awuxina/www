@@ -1,0 +1,382 @@
+数据库:
+        关系型数据库:sqllite,db2,oracle,access.sql server,MySQL
+        非关系型数据库:MongoDB,redis
+
+MySQL:是用于管理文件的一个软件
+    - 服务端软件
+        - socket服务端
+        - 本地文件操作
+        - 解析指令{SQL语句}
+    - 客户端软件(各种各样)
+        - socket客户端
+        - 发送指令
+        - 解析指令{SQL语句}
+
+    PS:
+        - DMS数据库管理系统
+        - SQL语句
+
+MySQL安装:
+    cmd 执行 D:\Software\Mysql\mysql-5.7.21-winx64\bin\mysqld --initialise-insecure
+
+    启动服务端:
+            net start mysql
+    客户端连接:
+            mysql -u root -p
+    发送指令:
+             show databases;    #查看数据库
+             create database db1    #创建数据库
+
+MySQL使用:
+    默认:用户root
+
+    查看用户数据:
+             1.use mysql;   #进入mysql数据库
+             2.show tables;  #显示里面表
+             3.select user from user;   #查看user表里面的user列数据
+    创建用户:
+             #创建awuxina用户 只能在'192.168.1.%'登录 也可写成 '192.168.%'或 '%'机器登录
+             #密码'123123'
+             create user 'awuxina'@'%' identified by '123123';
+    删除用户:
+            drop user 'awuxina'@'%';
+    修改用户:
+            rename user 'awuxina'@'%' to '新用户名'@'IP地址';
+    修改密码:
+            set password for 'awuxina'@'%' = Password('新密码')
+
+    权限管理:
+    授权:
+        grant select,insert,updata  on db1.* to 'awuxina'@'%';
+        grant all privileges  on db1.* to 'awuxina'@'%';
+    取消授权:
+        revoke 权限 on 数据库.表 from 'awuxina'@'%'
+    查看权限:
+        show grants for '用户'@'IP地址'
+
+    数据库操作:
+        create database 数据库名;       #创建数据库
+        create database 数据库名 default charset utf8;       #创建数据库设置格式
+
+        show databases;     #显示数据库
+        drop database 数据库名;     #删除数据库
+
+    操作表:
+        主键:唯一标识,加速查找
+             一个表只能有一个主键,但一个主键可以不只一列
+        auto_increment:自增
+        show tables;        #显示所有表
+        show create table 表 [\G];#查看表创建过程 \G 改变显示方式
+        show global variable like 'auto_inc%' #查看全局步长
+        数据类型:int char(10)
+                数字:
+                    tinyint(-128--127)
+                    int
+                    bigint
+                    float   #到一定位数不精准
+                    double  #到一定位数不精准
+                    decimal #存储小数精准  如:num decimal(10,5)总位数10,小数位5个
+                字符串:
+                    char(长度)        #当没占满会自动填充,用于固定长度字符串
+                    varchar(长度)     #最多能占10个,不会填充,节省空间,但速度慢char
+                    text              #长度65535
+                    mediumtext        #长度16777215
+                    longtext          #长度4294967295
+                    enum:
+                        create table shirts(
+                            name varchar(40),
+                            size enum('x-small','small','medium')
+                        );
+                    set:
+                        create table myset(
+                        name varchar(40),
+                        col SET('a','b','c','d')
+                        );
+                        inset into myset(name.col) values('name','a,b')
+                        inset into myset(name.col) values('name','a,d,c,b')
+                时间类型
+                    DATE: YYYY-MM-DD (1000-01-01/9999-12-31)
+                    TIME: HH:MM:SS('-838:59:59'/'838:59:59')
+                    YEAR: YYYY(1901/2155)
+                    DATETIME: YYYY-MM-DD (1000-01-01 00:00:00/9999-12-31 23:59:59)
+                    TIMESTAMP: YYYYMMDD HHMMSS(1970-01-01 00:00:00/2037 年某时)
+        创建表 1
+        create table t1(id int not null,name char(10))
+        创建表 2  #设置格式
+        create table t1(id int not null,name char(10))default charset utf8;
+        创建表 3  #设置格式 #engine=innodb 支持回滚事务 默认myisam这个不支持事务
+        create table t1(id int not null ,name char(10)) engine=innodb default charset utf8;
+        创建表 4  #设置格式 #engine=innodb #id auto_increment自增 primary key主键
+        create table t1(id int not null auto_increment primary key,name char(10))
+        engine=innodb default charset utf8;
+        创建表 5  #设置格式 #engine=innodb #id auto_increment自增 primary key主键
+        #外键约束
+        create table t1(id int not null auto_increment primary key,name char(10),
+        department_id int,
+        constraint fk_user_depar foreign key('department_id',) references department('id')
+        ) engine=innodb default charset utf8;
+        创建表 5  #设置格式 #engine=innodb #id auto_increment自增 primary key主键
+        #外键约束 #自增值5开始
+        create table t1(id int not null auto_increment primary key,name char(10),
+        department_id int,constraint fk_user_depar foreign key('department_id',) references department('id')
+        ) engine=innodb auto_increment=5 default charset utf8;
+
+        create table department(
+            id bigint auto_increment primary key,
+            title char(15)
+        )engine=innodb default charset=utf8;
+        修改:
+        #修改自增值2开始
+        alter table 表 auto_increment=2;
+        #修改全局级自增别步长
+        set global auto_increment_increment=200
+        #修改全局级自增起始值
+        set global auto_increment_offset=10
+        #修改回话级别步长
+        set session auto_increment_increment=2
+        #修改回话级自增起始值
+        set session auto_increment_offset=10
+
+        清空表
+        delete from t1;
+        truncate table t1;#操作速度比delete快,而且自增重新1开始
+    操作表内容
+        表:
+        create table tb1(
+        id int auto_increment primary key,
+        name varchar(32),
+        age int
+        )engine=innodb default charset=utf8;
+        增
+        insert into tb1(name,age) values(1,'aaa',12)
+        insert into tb1(name,age) values('bbb',51),('ccc',22)
+        #将tb2的数据插入tb1
+        insert into tb2(name,age) select name,age from tb1;
+        删:
+        delete from tb2;
+        delete from tb2 where id!=2;
+        delete from tb2 where id!=2 and name='aaa';
+        改:
+        update tb1 set age=18 where id>5 and id<10
+        查:
+        select * from tb1;
+        select id,name,age from tb1 where id<100 or id>150;
+        select id,name,age,1 from tb1 where id>1 and id<100;
+        范围查:
+            select id,name,age from tb1 where id in (1,5,12);
+            select id,name,age from tb1 where id not in (1,5,12);
+            select id,name,age from tb1 where id between 5 and 12;
+            select id,name,age from tb1 where id in (select id from t1);
+
+            select id,name,age from tb1 where name like 'a_';
+            select id,name,age from tb1 where name like 'a%';
+
+            select id,name,age from tb1 limit 10;
+            #从第10条开始取2条,第11条开始取
+            select id,name,age from tb1 limit 10,2;
+
+            #从大到小排序
+            select id,name,age from tb1 order by id desc;
+            #从小到大
+            select id,name,age from tb1 order by id asc;
+        分组查:
+        准备:
+            create table department5(
+            id int auto_increment primary key,
+            title varchar(32)
+            )engine=innodb default charset=utf8;
+
+            create table userinfo5(
+            id int auto_increment primary key,
+            name varchar(32),
+            part_id int,
+            constraint fk_user_part foreign key (part_id) references department5(id)
+            )engine=innodb default charset=utf8;
+
+            insert into department5(title) values('公关'),('保安'),('清洁'),('财务');
+            insert into userinfo5 (name,part_id)values('ads','1'),('sd','3'),('wf','4'),('cx','2');
+            insert into userinfo5 (name,part_id)values('aaa','1'),('bbb','3'),('www','4'),('qqq','2');
+            insert into userinfo5 (name,part_id)values('ffff','1'),('wwwwa','3'),('bbbbwf','4'),('caaax','2');
+            insert into userinfo5 (name,part_id)values('阿大','1'),('阿二','3'),('张三','4'),('李四','2');
+            insert into userinfo5 (name,part_id)values('aba','1'),('afsgw','2'),('张bsafg三','2'),('aafaqww','3')
+            ,('vvvvv','3'),('44545aafaqwwwwww','3');
+        查:
+            #查询,每组最大的id #max,min,sum,avg,count
+            select max(id),part_id from userinfo5 group by part_id;
+            #查询,每组多少人
+            select count(id),part_id from userinfo5 group by part_id;
+
+            #查询人数,大于6的组 #group by 再要筛选 接having where 不能加聚合函数结果
+            mysql> select count(id) as num ,part_id from userinfo5 group by part_id having num>6;
+        链表操作
+            #显示人所在部门
+            #方式1
+            select u.id,u.name,d.title from userinfo5 as u,department5 as d where u.part_id=d.id;
+            #方式2 #左边全部显示
+            select userinfo5.id,userinfo5.name,department5.title from userinfo5 left join department5 on userinfo5.part_id =department5.id;
+
+            #右边全部显示
+            select userinfo5.id,userinfo5.name,department5.title from userinfo5 right join department5 on userinfo5.part_id =department5.id;
+        给结果加编号:
+            set @ids=0;
+            select (@ids:=@ids+1)编号,id,name from userinfo5 where id>5;
+        补充:
+            条件:
+                 case when id>8 then xx else xx end
+            三元运算:   if(isnill(xx),0,1)
+            左右连表:  left join, right join
+            上下连表: UNION:可以自动去重复,如果不去重复,UNION改UNION ALL
+                      select sid,sname from student
+                      UNION
+                      select sid,sname from student
+外键内容:
+    1.唯一索引:不能重复,加速查找(能够有一个为空)
+        create table t1(
+            id int not null auto_increment primark key,
+            num int,
+            xx int,
+            unique uq_ul (num,xx)联合唯一,只1个就是单列唯一
+        )engine=innodb defaute charset=utf8
+
+    2.外键的变种:
+        a.===>>一对多
+        用户表和部门表
+            用户:
+                1 alex 1
+                2 root 1
+                3 egon 2
+                4 laoyao 3
+            部门:
+                1 服务
+                2 保安
+                3 公关
+
+        b.===>>一对一
+        用户表和博客表
+            用户:
+                1 alex
+                2 root
+                3 egon
+                4 laoyao
+            博客表:
+                              FK()+ 唯一
+                1 /yuancheng/ 4
+                2 /alex3714/  1
+        例子:
+            create table userinfo1(
+            id int auto_increment primark key,
+            name char(10) not null ,
+            gender varchar(10),
+            email varchar(64)
+            )engine=innodb default charset=utf8;
+
+            create table admin(
+            id int not null auto_increment primary key,
+            username varchar(64) not null,
+            password varchar(64) not null,
+            user_id int not null,
+            unique uq_ul (user_id),
+            constraint fk_admin_ul foreign key(user_id) references userinfo1(id)
+            )
+        c.===>>多对多
+        用户表(百合网)
+          相亲记录表
+          id    user1 user2
+          1     1       2
+          2     1       3
+          3     2       3
+          4     3       1
+        例子:
+            create table userinfo2(
+            id int auto_increment primary key,
+            name char(10),
+            gender char(10),
+            email   varchar(64)
+            )engine=innodb default charset=utf8;
+
+            create table host(
+            id int auto_increment primary key,
+            hostname varchar(64)
+            )engine=innodb default charset=utf8;
+
+            create table user_host(
+            id int auto_increment primary key,
+            user_id int not null,
+            host_id in not null,
+            unique uq_user_host (user_id,host_id),
+            constraint fk_uh_user foreign key(uer_id) references userinfo2(id),
+            constraint fk_uh_host foreign key(host_id) references host(id)
+            )engine=innodb default charset=utf8
+
+    转储SQL文件:
+            运行cmd输入:   mysqldump -u root db1 > db1.sql -p #将数据库表及数据备份
+            运行cmd输入:   mysqldump -u root -d db1 > db1.sql -p #将数据库表备份
+
+    导入SQL文件:
+            需先创建数据库
+            运行cmd输入:   mysqldump -u root -d db5 < db1.sql -p #导入数据
+
+
+视图:
+    - 创建视图:视图是临时表,虚拟的,不能插入数据
+        create view 视图名称 as SQL
+    - 修改:
+        alter view 视图名称 as SQL
+    - 删除
+        drop view 视图名称
+
+触发器:当对某张表做:增删改操作的前后,所做的行为
+        使用触发器 需要修改结束符;
+        NEW:代表新数据
+        OLD:代表老数据
+        delimiter //
+        create trigger t1 before insert on student for each row
+        begin
+            insert into teacher(tname) values(NEW.sname);
+        end //
+        delimiter ;
+       查看触发器: show TRIGGERS
+       删除触发器: drop trigger  触发器名称
+    - 插入前:create trigger 触发器名称 before insert on 表 fro cach row
+             begin
+                .......
+             end
+    - 插入后:create trigger 触发器名称 after insert on 表 fro cach row
+             begin
+                .......
+             end
+
+    - 删除前:create trigger 触发器名称 before delete on 表 fro cach row
+             begin
+                .......
+             end
+    - 删除后:create trigger 触发器名称 after delete on 表 fro cach row
+             begin
+                .......
+             end
+
+    - 更新前:create trigger 触发器名称 before update on 表 fro cach row
+             begin
+                .......
+             end
+    - 更新后:create trigger 触发器名称 after update on 表 fro cach row
+             begin
+                .......
+             end
+
+函数:
+    内置函数:部分内置函数连接 http://www.cnblogs.com/wupeiqi/articles/5713323.html
+        执行函数:select CURDATE(); select SUM();
+            时间格式化:DATA_FORMAT(时间,)
+            select ctime,count(1) from blog group DATA_FORMAT(ctime,"%Y-%m-%d")
+
+    自定义函数:
+        delimiter //
+        create function f1(i1 int,i2 int) returns int
+        begin
+            declare num int;
+            set num=i1+i2;
+                return(num);
+        end //
+        delimiter ;
+        select f1(5,6)

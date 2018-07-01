@@ -1,0 +1,66 @@
+CREATE TABLE class(
+cid int auto_increment PRIMARY KEY,
+caption char(10)
+)ENGINE=INNODB DEFAULT charset=utf8;
+
+DROP TABLE student
+CREATE TABLE student(
+sid INT auto_increment PRIMARY KEY,
+sname VARCHAR(10),
+gender enum('男','女','未知') not NULL,
+clasee_id INT not NULL,
+UNIQUE uq_sname (sname),
+CONSTRAINT fk_student_class FOREIGN KEY(clasee_id) REFERENCES class(cid)
+)ENGINE=INNODB DEFAULT charset=utf8;
+
+CREATE TABLE teacher(
+tid INT auto_increment PRIMARY KEY,
+tname VARCHAR(10) NOT NULL
+)ENGINE=INNODB DEFAULT charset=utf8;
+
+CREATE TABLE course(
+cid INT auto_increment PRIMARY KEY,
+cname CHAR(2) NOT NULL,
+tearch_id int,
+UNIQUE uq_cname (cname),
+CONSTRAINT fk_coust_teacher FOREIGN KEY (tearch_id) REFERENCES teacher(tid)
+)ENGINE=INNODB DEFAULT charset=utf8;
+
+CREATE TABLE score(
+sid	int auto_increment PRIMARY KEY,
+student_id INT NOT NULL,
+course_id INT NOT NULL,
+number INT NOT NULL,
+UNIQUE uq_student_id_cores_id(student_id,course_id),
+CONSTRAINT fk_student_id_student_sid FOREIGN KEY(student_id) REFERENCES student(sid),
+CONSTRAINT fk_course_id_course_cid FOREIGN KEY(course_id) REFERENCES course(cid)
+)ENGINE=INNODB DEFAULT charset=utf8;
+
+INSERT INTO class(caption) VALUES('三年二班');
+INSERT INTO class(caption) VALUES('一年三班');
+INSERT INTO class(caption) VALUES('三年一班');
+
+INSERT INTO student(sname,gender,class_id) VALUES('钢蛋','女',1);
+INSERT INTO student(sname,gender,class_id) VALUES('铁锤','女',1);
+INSERT INTO student(sname,gender,class_id) VALUES('山炮','男',2);
+
+INSERT INTO teacher(tname) VALUES('波多');
+INSERT INTO teacher(tname) VALUES('苍空');
+INSERT INTO teacher(tname) VALUES('饭岛');
+
+INSERT INTO course(cname,tearch_id) VALUES('生物',1);
+INSERT INTO course(cname,tearch_id) VALUES('体育',1);
+INSERT INTO course(cname,tearch_id) VALUES('物理',2);
+
+INSERT INTO score(student_id,course_id,number) VALUES(1,1,60);
+INSERT INTO score(student_id,course_id,number) VALUES(1,2,59);
+INSERT INTO score(student_id,course_id,number) VALUES(2,2,100);
+
+
+SELECT * FROM class;
+SELECT * FROM student;
+SELECT * FROM teacher;
+SELECT * FROM course;
+SELECT * FROM score;
+
+

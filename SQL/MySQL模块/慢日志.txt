@@ -1,0 +1,25 @@
+慢日志:
+    - 执行时间 > x秒
+    - 未命中索引
+    - 日志文件路径
+
+配置:
+    - 内存
+        #查看内存变量
+        show variables like '%query%';
+            long_query_time #执行时间
+            slow_query_log
+            slow_query_log_file #日志文件路径
+
+         #查看是否使用索引变量
+         show variables like '%queries%';
+            log_queries_not_using_indexes   #是否使用索引
+
+         set global 变量=ON
+
+    - 配置文件
+        mysqld --defaults-file=配置文件路径
+         slow_query_log = ON
+         slow_query_log_file = D:/...
+
+       修改配置文件后要重启服务,记得备份配置文件

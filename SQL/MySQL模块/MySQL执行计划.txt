@@ -1,0 +1,23 @@
+估计SQL执行时间
+explain SQL
+type:性能:all < index < rang <idnex_merge < ref_or_null < ref <eq_ref < system/const
+    ALL:全表扫描,执行相对慢
+        selct * from userinfo;
+    ref:索引查找一个或多个值
+        select * from userinfo='seven';
+    index:全索引扫描,对索引从头到尾找一遍
+        select nid from userinfo;
+    rang:对索引列进行范围查找
+        select * from userinfo where id <5;
+    index_merage:合并索引,使用多个单列索引搜索
+        select * from userinfo where uname = 'alex' or id in (11,22,33)
+    eq_ref:唯一索引(primary 或 unique)
+        select * from userinfo hwere uname = 'seven';
+    const: 常量,表最多有一行匹配
+         select id from userinfo where id=4
+    system: 系统,表仅有一行(=系统表).这是const联接受类型的特例
+         select * from (select id from userinfo where nid=1) as A
+
+possible_keys:可能使用索引
+key:真实使用的
+key_len:MYSQLzhon
